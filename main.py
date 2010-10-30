@@ -1,5 +1,6 @@
 import serial
 from lxml import etree
+import datetime
 
 ser = serial.Serial(port='/dev/ttyUSB0',
                     baudrate=57600,
@@ -8,9 +9,10 @@ ser = serial.Serial(port='/dev/ttyUSB0',
                     stopbits=serial.STOPBITS_ONE,
                     timeout=120)
 
-fileTxt = open("dump.txt", "w")
+fileTxt = open("dump.txt", "a")
 dtd = etree.DTD("currentcost.dtd")
 
+fileTxt.write("\n\n\n<!-- Starting at " + str(datetime.datetime.now()) + "-->\n")
 
 ser.open()
 
@@ -38,6 +40,10 @@ while(keepLooping):
 		print "TimeOut Error"
 	except serial.SerialException:
 		print "serial Error"
+	except KeyboardInterrupt:
+		print "Closing down"
+		keepLooping = False
+		
 	#except Exception:
 	#	print "Error!"
 
