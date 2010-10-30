@@ -3,6 +3,12 @@
 	
     <element name="sensor" type="string"></element>
     <element name="watts" type="string"></element>
+    
+    <complexType name="Channel">
+    	<sequence>
+    		<element ref="tns:watts"></element>
+    	</sequence>
+    </complexType>
 
     <group name="msg">
     	<sequence>
@@ -22,9 +28,9 @@
     		<element ref="tns:sensor" minOccurs="1" maxOccurs="1"></element>
     		<element name="id" type="string" minOccurs="1" maxOccurs="1"></element>
     		<element name="type" type="string" minOccurs="1" maxOccurs="1"></element>
-    		<element name="ch1" type="string" minOccurs="1" maxOccurs="1"></element>
-    		<element name="ch2" type="string" minOccurs="1" maxOccurs="1"></element>
-    		<element name="ch3" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="ch1" type="tns:Channel" minOccurs="1" maxOccurs="1"></element>
+    		<element name="ch2" type="tns:Channel" minOccurs="1" maxOccurs="1"></element>
+    		<element name="ch3" type="tns:Channel" minOccurs="1" maxOccurs="1"></element>
     	</sequence>
     </group>
 
@@ -42,9 +48,38 @@
 	    </sequence>
     </group>
     
-    <group name="TwoHourlyHistoryData"></group>
+    <group name="TwoHourlyHistoryData">
     
-    <group name="DailyHistoryData"></group>
+    	<sequence>
+    		
+    		<element name="h024" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h022" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h020" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h018" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h016" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h014" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h012" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h010" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h008" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h006" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h004" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h002" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="h000" type="string" minOccurs="0" maxOccurs="1"></element>
+    	
+    	</sequence>
     
-    <group name="MonthlyHistoryData"></group>
+    </group>
+    
+    <group name="DailyHistoryData">    
+    	<sequence>    		
+    		<element name="d001" type="string" minOccurs="0" maxOccurs="1"></element>    	
+    	</sequence>    	
+    </group>
+    
+    <group name="MonthlyHistoryData">
+    	<sequence>
+    		<element name="m001" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </group>
+    
 </schema>
