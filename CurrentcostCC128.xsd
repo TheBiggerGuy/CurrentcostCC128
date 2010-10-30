@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/NewXMLSchema" xmlns:tns="http://www.example.org/NewXMLSchema" elementFormDefault="qualified">
+	
+    <element name="sensor" type="string"></element>
+    <element name="watts" type="string"></element>
+
+    <group name="msg">
+    	<sequence>
+    		<element name="src" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="dsb" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="time" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<choice>
+    			<group ref="tns:RealTime"></group>
+    			<group ref="tns:HistoryStore"></group>
+    		</choice>
+    	</sequence>
+    </group>
+    
+    <group name="RealTime">
+    	<sequence>
+    		<element name="tmpr" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element ref="tns:sensor" minOccurs="1" maxOccurs="1"></element>
+    		<element name="id" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="type" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="ch1" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="ch2" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="ch3" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </group>
+
+    <group name="HistoryStore">
+    	<sequence>
+    		<element name="dsw" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="type" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="units" type="string" minOccurs="1" maxOccurs="1"></element>
+    	
+	    	<choice>
+	    		<group ref="tns:TwoHourlyHistoryData" minOccurs="0" maxOccurs="unbounded"></group>
+	    		<group ref="tns:DailyHistoryData" minOccurs="0" maxOccurs="unbounded"></group>
+	    		<group ref="tns:MonthlyHistoryData" minOccurs="0" maxOccurs="unbounded"></group>
+	    	</choice>
+	    </sequence>
+    </group>
+    
+    <group name="TwoHourlyHistoryData"></group>
+    
+    <group name="DailyHistoryData"></group>
+    
+    <group name="MonthlyHistoryData"></group>
+</schema>
