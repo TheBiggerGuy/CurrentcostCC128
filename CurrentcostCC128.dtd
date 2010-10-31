@@ -34,33 +34,6 @@
 
 -->
 
-<!--
-
-
-<msg>
-    <src>CC128-v1.29</src>
-    <dsb>00000</dsb>
-    <time>15:01:00</time>
-    
-    <hist>
-        <dsw>00002</dsw>
-        <type>1</type>
-        <units>kwhr</units>
-        
-        <data>
-            <sensor>0</sensor>
-            <h030>1.058</h030>
-            <h028>2.386</h028>
-            <h026>1.403</h026>
-            <h024>2.958</h024>
-        </data>
-        <data>
-            <sensor>1</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>2</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>3</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>4</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>5</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>6</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>7</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>8</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>9</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data></hist></msg>)
-
-
--->
-
-
 <!ELEMENT msg (src,dsb,time,((tmpr,sensor,id,type,ch1?,ch2?,ch3?)|hist))>
 
 <!-- Real-Time Output -->

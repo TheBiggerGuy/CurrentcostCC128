@@ -34,9 +34,12 @@ while(keepLooping):
 				xml = etree.XML(temp[0])
 				if dtd.validate(xml):
 					fileTxt.write(temp[0])
+					fileTxt.flush()
 					fileLog.write("Got msg\n")
+					fileLog.flush()
 				else:
 					fileLog.write("Not valid 'DTD' (\n" + temp[0] + "\n)\n")
+					fileLog.flush()
 	
 	except serial.SerialTimeoutException:
 		print "TimeOut Error"
