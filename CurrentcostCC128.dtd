@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author:
@@ -54,7 +55,6 @@
 <!-- History Output -->
 
 
-<!-- Two-Hourly History Store -->
 <!ELEMENT hist (dsw,type,units,data+)>
 
 <!ELEMENT dsw (#PCDATA)>
@@ -140,6 +140,10 @@
 )>
 
 <!ELEMENT sensor (#PCDATA)>
+
+
+<!-- Two-Hourly History Store -->
+
 
 <!ELEMENT h000 (#PCDATA)>
 <!ELEMENT h001 (#PCDATA)>

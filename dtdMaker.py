@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 print("""
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
@@ -35,33 +38,6 @@ print("""
 
 -->
 
-<!--
-
-
-<msg>
-    <src>CC128-v1.29</src>
-    <dsb>00000</dsb>
-    <time>15:01:00</time>
-    
-    <hist>
-        <dsw>00002</dsw>
-        <type>1</type>
-        <units>kwhr</units>
-        
-        <data>
-            <sensor>0</sensor>
-            <h030>1.058</h030>
-            <h028>2.386</h028>
-            <h026>1.403</h026>
-            <h024>2.958</h024>
-        </data>
-        <data>
-            <sensor>1</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>2</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>3</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>4</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>5</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>6</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>7</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>8</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data><data><sensor>9</sensor><h030>0.000</h030><h028>0.000</h028><h026>0.000</h026><h024>0.000</h024></data></hist></msg>)
-
-
--->
-
-
 <!ELEMENT msg (src,dsb,time,((tmpr,sensor,id,type,ch1?,ch2?,ch3?)|hist))>
 
 <!-- Real-Time Output -->
@@ -82,7 +58,6 @@ print("""
 <!-- History Output -->
 
 
-<!-- Two-Hourly History Store -->
 <!ELEMENT hist (dsw,type,units,data+)>
 
 <!ELEMENT dsw (#PCDATA)>
@@ -94,13 +69,17 @@ print("""
 
 <!ELEMENT data (sensor,
 	(
-		(d001?,d002?,d003?,d004?,d005?,d006?,d007?,d008?,d009?,d010?,d011?,d012?,""")
+		(d001?,d002?,d003?,d004?,d005?,d006?,d007?,d008?,d009?,d010?,d011?,d012?,
+		""", end='')
 for i in range(13, 744):
-    print("h{0}?,".format( str(i).zfill(3) ), end='')
-    if i % 12 == 0 and not i==0:
+    if i < 743:
+        print("h{0}?,".format( str(i).zfill(3) ), end='')
+    else:
+        print("h{0}?".format( str(i).zfill(3) ), end='')
+    if i % 12 == 0:
         print("\n		", end='')
         
-print(")\n")
+print(")", end='')
 print("""
 	|
 		(d001?,d002?,d003?,d004?,d005?,d006?,d007?,d008?,d009?,d010?,d011?,d012?,
@@ -116,14 +95,15 @@ print("""
 
 <!ELEMENT sensor (#PCDATA)>
 
-<!-- Daily History Store -->
+
+<!-- Two-Hourly History Store -->
 
 """)
 
 for i in range(0, 745):
     print("<!ELEMENT h{0} (#PCDATA)>".format(str(i).zfill(3)))
 
-print("\n")
+print("\n<!-- Daily History Store -->\n")
 
 for i in range(1, 91):
     print("<!ELEMENT d{0} (#PCDATA)>".format(str(i).zfill(3)))
