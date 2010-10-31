@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 
-print("""
-<?xml version="1.0" encoding="UTF-8"?>
+print("""<?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author:
         Guy Taylor <thebigguy.co.uk@gmail.com>
