@@ -2,6 +2,30 @@ import serial
 from lxml import etree
 import datetime
 
+"""
+
+
+guy@Guys-Desktop:~/Code/git/CurrentcostCC128$ python main.py 
+    Traceback (most recent call last):
+      File "main.py", line 34, in <module>
+        xml = etree.XML(temp[0])
+      File "lxml.etree.pyx", line 2512, in lxml.etree.XML (src/lxml/lxml.etree.c:48057)
+      File "parser.pxi", line 1545, in lxml.etree._parseMemoryDocument (src/lxml/lxml.etree.c:71812)
+      File "parser.pxi", line 1424, in lxml.etree._parseDoc (src/lxml/lxml.etree.c:70673)
+      File "parser.pxi", line 938, in lxml.etree._BaseParser._parseDoc (src/lxml/lxml.etree.c:67442)
+      File "parser.pxi", line 539, in lxml.etree._ParserContext._handleParseResultDoc (src/lxml/lxml.etree.c:63824)
+      File "parser.pxi", line 625, in lxml.etree._handleParseResult (src/lxml/lxml.etree.c:64745)
+      File "parser.pxi", line 565, in lxml.etree._raiseParseError (src/lxml/lxml.etree.c:64088)
+    lxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 2, column 1
+guy@Guys-Desktop:~/Code/git/CurrentcostCC128$ 
+
+
+
+
+
+
+"""
+
 ser = serial.Serial(port='/dev/CurrentcostCC128',
                     baudrate=57600,
                     bytesize=serial.EIGHTBITS,

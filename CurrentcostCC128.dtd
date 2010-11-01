@@ -32,6 +32,136 @@
 
 -->
 
+
+<!--
+    NEED TO FIX
+    
+    Not valid 'DTD' (
+
+    <msg>
+        <src>CC128-v1.29</src>
+        <dsb>00001</dsb>
+        <time>21:08:10</time>
+        <hist>
+            <dsw>00003</dsw>
+            <type>1</type>
+            <units>kwhr</units>
+            <data>
+                <sensor>0</sensor>
+                <h060>1.058</h060>
+                <h058>2.386</h058>
+                <h056>1.403</h056>
+                <h054>2.958</h054>
+                <h052>2.786</h052>
+                ............
+                <h016>1.551</h016>
+                <h014>4.781</h014>
+                <h012>2.522</h012>
+                <h010>1.182</h010>
+                <h008>1.731</h008>
+                <h006>2.099</h006>
+                <h004>1.513</h004>
+            </data>
+            <data>
+                <sensor>1</sensor>
+                <h060>0.000</h060>
+                <h058>0.000</h058>
+                <h056>0.000</h056>
+                <h054>0.000</h054>
+                ...........
+                <h008>0.000</h008>
+                <h006>0.000</h006>
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>2</sensor>
+                <h060>0.000</h060>
+                .........
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>3</sensor>
+                <h060>0.000</h060>
+                ......
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>4</sensor>
+                <h060>0.000</h060>
+                .......
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>5</sensor>
+                <h060>0.000</h060>
+                ......
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>6</sensor>
+                <h060>0.000</h060>
+                .......
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>7</sensor>
+                <h060>0.000</h060>
+                .....
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>8</sensor>
+                <h060>0.000</h060>
+                ......
+                <h004>0.000</h004>
+            </data>
+            <data>
+                <sensor>9</sensor>
+                <h060>0.000</h060>
+                <h058>0.000</h058>
+                ........
+                <h010>0.000</h010>
+                <h008>0.000</h008>
+                <h006>0.000</h006>
+                <h004>0.000</h004>
+            </data>
+        </hist>
+    </msg>
+    )
+    Not valid 'DTD' (
+
+    <msg>
+        <src>CC128-v1.29</src>
+        <dsb>00001</dsb>
+        <time>21:08:11</time>
+        <hist>
+            <dsw>00003</dsw>
+            <type>1</type>
+            <units>kwhr</units>
+            <data>
+                <sensor>0</sensor>
+                <d002>13.117</d002>
+                <d001>28.953</d001>
+             </data>
+            <data>
+                <sensor>1</sensor><d002>0.000</d002><d001>0.000</d001>
+            </data>
+            <data>
+                <sensor>2</sensor><d002>0.000</d002><d001>0.000</d001>
+            </data>
+            <data><sensor>3</sensor><d002>0.000</d002><d001>0.000</d001></data>
+            <data><sensor>4</sensor><d002>0.000</d002><d001>0.000</d001></data>
+            <data><sensor>5</sensor><d002>0.000</d002><d001>0.000</d001></data>
+            <data><sensor>6</sensor><d002>0.000</d002><d001>0.000</d001></data>
+            <data><sensor>7</sensor><d002>0.000</d002><d001>0.000</d001></data>
+            <data><sensor>8</sensor><d002>0.000</d002><d001>0.000</d001></data>
+            <data><sensor>9</sensor><d002>0.000</d002><d001>0.000</d001></data>
+        </hist>
+    </msg>
+    )
+
+-->
+
 <!ELEMENT msg (src,dsb,time,((tmpr,sensor,id,type,ch1?,ch2?,ch3?)|hist))>
 
 <!-- Real-Time Output -->
