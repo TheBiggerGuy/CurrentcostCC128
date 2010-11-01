@@ -94,21 +94,17 @@ print("""
 
 <!ELEMENT sensor (#PCDATA)>
 
-
-<!-- Two-Hourly History Store -->
-
 """)
 
+print("\n<!-- Two-Hourly History Store -->\n")
 for i in range(0, 745):
     print("<!ELEMENT h{0} (#PCDATA)>".format(str(i).zfill(3)))
 
 print("\n<!-- Daily History Store -->\n")
-
 for i in range(1, 91):
     print("<!ELEMENT d{0} (#PCDATA)>".format(str(i).zfill(3)))
 
-print("""
+print("\n<!-- Monthly History Store -->\n")
+for i in range(1, 85):
+    print("<!ELEMENT m{0} (#PCDATA)>".format(str(i).zfill(3)))
 
-<!-- Monthly History Store -->
-
-""")
