@@ -36,6 +36,12 @@
 <!--
     NEED TO FIX
     
+    DTD has wrong order, hxxx should be descending not ascending
+    
+    same with dxx and thus probably with mxxx
+    
+    TODO: will fix on 2nd nov!
+    
     Not valid 'DTD' (
 
     <msg>
