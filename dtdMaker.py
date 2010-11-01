@@ -7,8 +7,6 @@ print("""<?xml version="1.0" encoding="UTF-8"?>
         Guy Taylor <thebigguy.co.uk@gmail.com>
     Refs:
         http://www.currentcost.com/cc128/xml.htm
-    TODO:
-        * Monthly History Store
     
     Copyright (c) 2010, Guy Taylor
     All rights reserved.
@@ -74,11 +72,10 @@ for i in range(13, 744):
     if i < 743:
         print("h{0}?,".format( str(i).zfill(3) ), end='')
     else:
-        print("h{0}?".format( str(i).zfill(3) ), end='')
+        print("h{0}?)".format( str(i).zfill(3) ), end='')
     if i % 12 == 0:
         print("\n		", end='')
         
-print(")", end='')
 print("""
 	|
 		(d001?,d002?,d003?,d004?,d005?,d006?,d007?,d008?,d009?,d010?,d011?,d012?,
@@ -89,6 +86,18 @@ print("""
 		d061?,d062?,d063?,d064?,d065?,d066?,d067?,d068?,d069?,d070?,d071?,d072?,
 		d073?,d074?,d075?,d076?,d077?,d078?,d079?,d080?,d081?,d082?,d083?,d084?,
 		d085?,d086?,d087?,d088?,d089?,d090?)
+	|
+		(m001?,m002?,m003?,m004?,m005?,m006?,m007?,m008?,m009?,m010?,m011?,m012?,
+		""", end='')
+for i in range(13, 85):
+    if i < 84:
+        print("m{0}?,".format( str(i).zfill(3) ), end='')
+    else:
+        print("m{0}?)".format( str(i).zfill(3) ), end='')
+    if i % 12 == 0 and not i == 84:
+        print("\n		", end='')
+        
+print("""
 	)
 )>
 
