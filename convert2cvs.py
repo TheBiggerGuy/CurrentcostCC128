@@ -1,6 +1,7 @@
 "Simple SAX example, updated for Python 2.0+"
 import xml.sax
 from xml.sax.handler import *
+from optparse import OptionParser
 
 class XML2CSV(ContentHandler):
 	"""Crude extractor for xml to CSV """
@@ -29,10 +30,18 @@ class XML2CSV(ContentHandler):
 
 if __name__ == "__main__":
 
+    parser = OptionParser()
+    parser.add_option("-f", "--file", dest="filename",
+                      help="write report to FILE", metavar="FILE", default="none")
+
+    (options, args) = parser.parse_args()
+    
+    if options.filename == "none":
+        exit()
+
     parser = xml.sax.make_parser()
     
     fileCSV = open("dump.csv", "w")
     handler = XML2CSV(fileCSV)
     parser.setContentHandler(handler)
-    parser.parse("dump.text.xml")
-
+    parser.parse(options.filename)
